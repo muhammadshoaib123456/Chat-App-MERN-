@@ -1,6 +1,6 @@
 export const login_user = async (formData: unknown) => {
     try {
-        const res = await fetch('http://localhost:8000/api/login-user', {
+        const res = await fetch('https://chat-app-mern-sage.vercel.app/api/login-user', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -19,7 +19,7 @@ export const login_user = async (formData: unknown) => {
 
 export const register_user = async (formData: unknown) => {
     try {
-        const res = await fetch('http://localhost:8000/api/register-user', {
+        const res = await fetch('https://chat-app-mern-sage.vercel.app/api/register-user', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -38,7 +38,7 @@ export const register_user = async (formData: unknown) => {
 export const get_all_users = async (id: unknown , token  : string) => {
     
     try {
-        const res = await fetch(`http://localhost:8000/api/get-all-users?id=${id}`, {
+        const res = await fetch(`https://chat-app-mern-sage.vercel.app/api/get-all-users?id=${id}`, {
             method: 'GET',
             headers : {
                 'authorization': `Bearer ${token}`
@@ -56,7 +56,7 @@ export const getChatData = async (data: any , token  : string) => {
    
     const { senderId, receiverId } = data;
     try {
-        const res = await fetch(`http://localhost:8000/api/get-user-chat?senderId=${senderId}&receiverId=${receiverId}`, {
+        const res = await fetch(`https://chat-app-mern-sage.vercel.app/api/get-user-chat?senderId=${senderId}&receiverId=${receiverId}`, {
             method: 'GET',
             headers : {
                 'authorization': `Bearer ${token}`
@@ -72,7 +72,7 @@ export const getGroupChatData = async (data: any, token  : string) => {
    
     const { senderId, receiverId , groupId } = data;
     try {
-        const res = await fetch(`http://localhost:8000/api/get-group-chat?senderId=${senderId}&receiverId=${receiverId}&groupId=${groupId}`, {
+        const res = await fetch(`https://chat-app-mern-sage.vercel.app/api/get-group-chat?senderId=${senderId}&receiverId=${receiverId}&groupId=${groupId}`, {
             method: 'GET',
             headers : {
                 'authorization': `Bearer ${token}`
@@ -90,7 +90,7 @@ export const send_message = async (formData: any , token  : string) => {
 
 
     try {
-        const res = await fetch(`http://localhost:8000/api/send-user-message`, {
+        const res = await fetch(`https://chat-app-mern-sage.vercel.app/api/send-user-message`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -110,7 +110,7 @@ export const send_message = async (formData: any , token  : string) => {
 
 export const create_group  =  async (formData: any , token  : string) => {
     try {
-        const res = await fetch(`http://localhost:8000/api/create-group`, {
+        const res = await fetch(`https://chat-app-mern-sage.vercel.app/api/create-group`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -129,7 +129,7 @@ export const create_group  =  async (formData: any , token  : string) => {
 
 export const get_user_group  = async (id: any , token  : string) => {
     try {
-        const res = await fetch(`http://localhost:8000/api/get-user-group?id=${id}`, {
+        const res = await fetch(`https://chat-app-mern-sage.vercel.app/api/get-user-group?id=${id}`, {
             method: 'GET',
             headers : {
                 'authorization': `Bearer ${token}`
@@ -146,7 +146,7 @@ export const get_user_group  = async (id: any , token  : string) => {
 export const send_group_message = async (formData: any , token  : string) => {
     
         try {
-            const res = await fetch(`http://localhost:8000/api/send-group-message`, {
+            const res = await fetch(`https://chat-app-mern-sage.vercel.app/api/send-group-message`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -165,7 +165,7 @@ export const send_group_message = async (formData: any , token  : string) => {
 export const delete_group = async (ownerId  : string, groupId : string, token  : string) => {
     
     try {
-        const res = await fetch(`http://localhost:8000/api/delete-group?ownerId=${ownerId}&groupId=${groupId}`, {
+        const res = await fetch(`https://chat-app-mern-sage.vercel.app/api/delete-group?ownerId=${ownerId}&groupId=${groupId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -183,7 +183,7 @@ export const delete_group = async (ownerId  : string, groupId : string, token  :
 export const delete_messages_from_me = async (deletingData : any ,token  : string) => {
     
     try {
-        const res = await fetch(`http://localhost:8000/api/delete-group-message-from-me`, {
+        const res = await fetch(`https://chat-app-mern-sage.vercel.app/api/delete-group-message-from-me`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
